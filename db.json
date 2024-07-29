@@ -1,0 +1,19 @@
+{
+  "customers": [
+    {
+      "firstName": "Ranjith",
+      "lastName": "KV",
+      "dob": "1985-01-06T18:30:00.000Z",
+      "email": "kv.ranjith@outlook.com",
+      "adharNumber": "123455677777",
+      "registrationDate": "2024-07-26T05:13:04.302Z",
+      "assignedMobileNumber": "2343242343",
+      "planName": "Gold 180",
+      "planCost": "699",
+      "validity": "180",
+      "planStatus": "Active",
+      "renewalDate": "2025-01-22T05:13:53.759Z",
+      "id": "a247"
+    }
+  ]
+}
