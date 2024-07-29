@@ -1,0 +1,131 @@
+<div mat-dialog-title>
+    <h1>Add Customers</h1>
+</div>
+<form [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <!-- first name -->
+            <mat-form-field appearance="outline">
+                <mat-label>First name</mat-label>
+                <input matInput type="text" placeholder="Ex. Ranjith" formControlName="firstName">
+            </mat-form-field>
+
+            <!-- last Name -->
+            <mat-form-field appearance="outline">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Ex. KV" formControlName="lastName">
+            </mat-form-field>
+
+        </div>
+
+        <div class="row">
+
+            <!-- Date of birth -->
+            <mat-form-field appearance="outline">
+                <mat-label>Date of birth</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dob">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <!-- email -->
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="Ex. test@gmail.com" required formControlName="email"/>
+             
+                    <!-- <mat-error>Enter the email address </mat-error> -->
+                 
+            </mat-form-field>
+
+        </div>
+
+        <div class="row">
+            <!-- Aadhar number -->
+            <mat-form-field appearance="outline">
+                <mat-label>Aadhar Number</mat-label>
+                <input maxlength="12" minlength="12" matInput type="Aadhar" placeholder="12 Digit" formControlName="adharNumber">
+            </mat-form-field>
+
+            <!-- current Date and time -->
+            <mat-form-field appearance="outline"  floatLabel="always">
+                <mat-label>Registration Date</mat-label>
+
+                <input readonly="true" autocomplete="off" placeholder=" {{currentDateAndTime}}" 
+                 matInput value="{{currentDateAndTime}}" formControlName="registrationDate">
+            </mat-form-field>
+
+        </div>
+
+  
+
+        <div class="row">
+            <!-- mobile -->
+                <mat-form-field appearance="outline">
+                <mat-label>Mobile Number</mat-label>
+                <input type="number" maxlength="10" minlength="10" matInput placeholder="1234567890" required formControlName="assignedMobileNumber">
+                <mat-icon matSuffix>phone</mat-icon>
+            </mat-form-field>
+        </div>
+
+        <!-- choose plan -->
+        <p>Choose Plan </p>
+        <div class="row">
+            <!-- plan name -->
+            <mat-form-field appearance="outline">
+                <mat-label>Plan Name</mat-label>
+                <mat-select [(value)]="selected"  (selectionChange)="planSelection(selected)" formControlName="planName">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let val of plans" [value]="val">{{val}}
+                    </mat-option>
+                  </mat-select>
+                  
+            </mat-form-field>
+      
+        </div>
+
+        <div class="row">
+            <!-- plan cost -->
+            <mat-form-field appearance="outline"  floatLabel="always">
+                <mat-label>Plan Cost</mat-label>
+
+                <input  readonly="true" autocomplete="off" placeholder=" {{planCost}}" value=" {{ planCost}}" 
+                matInput formControlName="planCost">
+            </mat-form-field>
+        </div>
+
+
+        
+        <div class="row">
+            
+            <!-- validity -->
+            <mat-form-field appearance="outline"  floatLabel="always">
+                <mat-label>Validity</mat-label>
+
+                <input readonly="true" autocomplete="off" placeholder=" {{validity}}" value=" {{ validity}}"  matInput formControlName="validity">
+            </mat-form-field>
+        </div>
+
+        
+        <div class="row">
+            
+            <!-- plan status -->
+            <mat-form-field appearance="outline"  floatLabel="always">
+                <mat-label>Plan Status</mat-label>
+
+                <input readonly="true" autocomplete="off" placeholder=" {{planStatus}}" value=" {{ planStatus}}"  matInput formControlName="planStatus">
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline"  floatLabel="always">
+                <mat-label>Renewal Date</mat-label>
+
+                <input readonly="true" autocomplete="off" placeholder=" {{renewalDate}}" value=" {{ renewalDate}}"  matInput formControlName="renewalDate">
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button type="button" [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">{{data ? 'Update': 'Save'}}</button>
+    </div>
+</form>

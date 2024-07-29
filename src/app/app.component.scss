@@ -1,0 +1,61 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.main-body {
+  padding-top: 20px;
+  margin: 0 auto;
+  max-width: 1348px;
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.action {
+  display: flex;
+  gap: 5px;
+}
+.mat-mdc-paginator {
+  margin: 18px 0 0;
+}
+
+.chipgreen{
+  background: green;
+  color: #fff;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+
+.chipred{
+  background: red;
+  color: #fff;
+  padding: 5px;
+  border-radius: 6px;
+}
+.table-container {
+  width: 100%;
+  height: calc(100vh - 32px);
+  overflow: auto;
+}
+
+table {
+  width: 800px;
+}
+
+td.mat-column-star {
+  width: 20px;
+  padding-right: 8px;
+}
+
+th.mat-column-position, td.mat-column-position {
+  padding-left: 8px;
+}
+
+.mat-table-sticky:first-child {
+  border-right: 1px solid #e0e0e0;
+}
+
+.mat-table-sticky:last-child {
+  border-left: 1px solid #e0e0e0;
+}
